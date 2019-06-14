@@ -4815,8 +4815,17 @@ function getDisplayLoci(alleles) {
 
     var displayName = alleleDisplayNames.join(' / ');
 
+    var geneDisplayName = null;
+
+    $.map(alleles,
+          function(allele) {
+            if (allele.gene_display_name) {
+              geneDisplayName = allele.gene_display_name;
+            }
+          });
+
     var diploidLocus = {
-      gene_display_name: alleles[0].gene_display_name,
+      gene_display_name: geneDisplayName,
       gene_id: alleles[0].gene_id,
       type: type,
       long_display_name: displayName,
@@ -5022,10 +5031,7 @@ var genotypeListRowCtrl =
         $scope.notesOnSingleAlleleGenotypesOnly =
           CantoGlobals.notes_on_single_allele_genotypes_only;
 
-        var displayLoci = getDisplayLoci($scope.genotype.alleles);
-
-        $scope.firstLocus = displayLoci[0];
-        $scope.otherLoci = displayLoci.slice(1);
+        $scope.displayLoci = getDisplayLoci($scope.genotype.alleles);
 
         $scope.isSelected = function () {
           return $scope.selectedGenotypeId &&

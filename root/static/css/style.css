@@ -729,10 +729,18 @@ div.clearall {
   margin-left: 1em;
 }
 
-table th.curs-genotype-checkbox-column,
-table td.curs-genotype-checkbox-column {
+table tr th.curs-genotype-checkbox-column,
+table tr td.curs-genotype-checkbox-column {
   border: 0px solid #bbb;
   background-color: white;
+}
+
+tr.selected .curs-genotype-allele-gene {
+  visibility: visible;
+}
+
+tr .curs-genotype-allele-gene {
+  visibility: hidden;
 }
 
 .curs-genotype-list-instructions span {
