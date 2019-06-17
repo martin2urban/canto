@@ -5038,6 +5038,8 @@ var genotypeListRowCtrl =
             $scope.selectedGenotypeId == $scope.genotype.genotype_id;
         };
 
+        $scope.encodeSymbols = encodeSymbol;
+
         $scope.clearSelection = function () {
           $scope.setSelectedGenotypeId({
             genotypeId: null

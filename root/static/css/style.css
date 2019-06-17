@@ -409,6 +409,10 @@ table.curs-genotype-list tbody {
   padding: 3px;
 }
 
+.curs-genotype-locus-alleles {
+  white-space: nowrap;
+}
+
 .annotation-stats {
   clear: both;
   padding-top: 30px;
