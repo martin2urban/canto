@@ -7000,7 +7000,7 @@ var initiallyHiddenText =
       template: '<span ng-show="trimmedText.length > 0">' +
         '<span ng-hide="hidden" ng-bind-html="trimmedText | toTrusted"></span>' +
         '<span ng-show="hidden" uib-tooltip="{{trimmedText}}">' +
-        '  <span ng-show="previewChars.length > 0" ng-bind-html="previewChars | toTrusted"></span>' +
+        '  <span ng-click="show()" ng-show="previewChars.length > 0" ng-bind-html="previewChars | toTrusted"></span>' +
         '  <a ng-click="show()">&nbsp;<span style="font-weight: bold">{{linkLabel}}</span></a>' +
         '</span></span>',
     };
