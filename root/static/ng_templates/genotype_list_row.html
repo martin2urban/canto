@@ -33,6 +33,8 @@
       <span ng-bind-html="currentLocus.gene_display_name | wrapAtSpaces | encodeGeneSymbols | toTrusted"></span>
     </a>
 
+    </div>
+
     <span class="curs-genotype-comment-indicator"
           ng-if="userIsAdmin && genotype.comment && (genotype.alleles.length == 1 || !notesOnSingleAlleleGenotypesOnly)">
       <a title="{{genotype.comment}} (click to edit)" ng-click="editComment()">new note ...</a>
@@ -42,7 +44,6 @@
           ng-if="userIsAdmin && currentLocus.comment">
       <a title="{{currentLocus.comment}}" ng-click="viewAlleleComment(genotype.alleles[0])">note ...</a>
     </span>
-  </div>
   </td>
 
 
