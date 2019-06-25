@@ -399,6 +399,11 @@ sub delete
 
   $self->allele_genotypes()->search({})->delete();
 
+  map {
+    $_->delete();
+  } $self->metagenotypes();
+
+
   $self->SUPER::delete();
 }
 
